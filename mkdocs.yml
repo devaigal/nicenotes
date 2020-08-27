@@ -1,0 +1,7 @@
+pages:
+- Home: index.md
+- Otra: about.md
+- About: about.md
+- nuevoArchivo: nuevoArchivo.md
+site_name: MkLorum
+theme: readthedocs
