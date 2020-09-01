@@ -1,15 +1,27 @@
 # NiceNotes #
-Prototipo conceptual para diseño de persistencia para sistemas notas, wiki, tareas, etc. basado en ficheros del sistema local.
+Take the control of your data. Prototipo conceptual para diseño de persistencia para apps de notas, wiki, tareas, etc. basado en ficheros del sistema local. Para que pueda ser utilizado por diferentes aplicaciones cada una con un propósito concreto y muy acotado.
 
 Se diseña un estándar para guardar notas, sus metadatos, ficheros adjuntos, etc. y por otra parte un prototipo conceptual de aplicación para utilizar esos datos guardados. 
 
-El objetivo es validar si esta aplicación y otras futuras con distintas funcionalidades pueden hacer uso de la persistencia solo en base a lo guardado en el sistema de ficheros.
+El objetivo es validar si esta aplicación y otras futuras con distintas funcionalidades pueden hacer uso de la persistencia solo en base a lo guardado en el sistema de ficheros. 
 
 ---
 
 Para el prototipo, utilizamos scripts en python para editar nuevas notas guardadas en ficheros md en local.
 
-Los scripts están basados en la utilidad https://github.com/janusnic/mkdocsadmin
+Los scripts están basados en la utilidad [MkAdmin](https://github.com/janusnic/mkdocsadmin)
+
+## TODO
+
+- [x] Incluir editor Markdown:
+
+  https://github.com/nhn/tui.editor#-examples
+
+- [ ] Añadir ReadTheDocs
+
+  Generar automáticamente el ejemplo de readTheDocs al editar notas
+
+- [ ] 
 
 ## Mkadmin
 
@@ -64,3 +76,12 @@ Subpages are not supported. Nesting pages is not yet implemented. For best resul
 
 
 [1]: http://www.mkdocs.org/ "mkdocs.org"
+
+
+
+## Referencias
+
+* Incluir editor visual: https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/saving-data.html
+* Framework web python Flask: https://flask.palletsprojects.com/en/1.1.x/quickstart/
+* Scripts Python modificación ficheros: https://github.com/janusnic/mkdocsadmin
+* 

@@ -1,4 +1,19 @@
 <!doctype html>
+
+<head>
+
+  <!-- Editor's Dependecy Style -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
+  />
+  <!-- Editor's Style -->
+  <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+
+
+</head>
+
+
 <title>mkdocs-admin</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <body>
@@ -7,9 +22,9 @@
     <div class="navbar">
         <table class="noborder">
             <tr class="noborder">
-                <td><a href="{{ url_for('display_new') }}">new file</a></td>
+                <td><a href="{{ url_for('display_new') }}">Nueva nota</a></td>
                 <td><a href="{{ url_for('display_filestatus') }}">status</a></td>
-                <td><a href="{{ url_for('display_log') }}">display log<a></td>
+                <td><a href="{{ url_for('display_log') }}">Logs<a></td>
             </tr>
         </table>
     </div>
@@ -18,12 +33,12 @@
 
         <table class="border">
             <tr class="border">
-                <th class="border">Filename</th>
+                <th class="border">Notas</th>
             </tr>
 
             {% for doc in doclist %}
             <tr class="border" class="centercol">
-                <td class="border"><a href="{{ url_for('display_edit', filename=doc) }}">{{ doc }}</a></td>
+                <td class="border"><a href="{{ url_for('display_edit_md', filename=doc) }}">{{ doc }}</a></td>
             </tr>
             {% endfor %}
 

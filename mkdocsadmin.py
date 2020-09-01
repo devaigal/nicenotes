@@ -112,6 +112,28 @@ def display_log():
                                log_content=logdata)
 
 
+
+@app.route(ADMINHOME + '/editmd/<filename>')
+def display_edit_md(filename):
+
+    mkddir = norm_docdir()
+
+    safe_filename = os.path.join(mkddir, 'docs', filename)
+    content = ''
+    try:
+        with open(safe_filename, 'r') as editfile:
+            content = editfile.read()
+        return render_template('edit_md.html', doclist=get_doclist(),
+                               filename=filename, content=content)
+    except FileExistsError:
+        logger.error('File %s does not exist. No changes have been made.',
+                     safe_filename)
+
+        flash('File not found at path ' + safe_filename)
+        return redirect(url_for('display_index'))
+
+
+# era el original. Ya no se usa
 @app.route(ADMINHOME + '/edit/<filename>')
 def display_edit(filename):
 
@@ -157,7 +179,7 @@ def submit_edit(filename):
         flash('Error saving file ' + safe_filename +
               '. Please see the log for detail')
     finally:
-        return redirect(url_for('display_edit', filename=filename))
+        return redirect(url_for('display_edit_md', filename=filename))
 
 
 @app.route(ADMINHOME + '/new')
@@ -230,7 +252,7 @@ def submit_new():
     build_docs()
 
     flash('File ' + safe_filename + ' added successfully!')
-    return redirect(url_for('display_edit', filename=safe_filename))
+    return redirect(url_for('display_edit_md', filename=safe_filename))
 
 
 @app.route(ADMINHOME + '/status')

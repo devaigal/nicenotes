@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body %}
+    <p>Filename: {{ filename }}</p>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://uicdn.toast.com/editor/latest/toastui-jquery-editor.min.js"></script>
+
+
+
+
+
+  <div id="editor"></div>
+
+
+
+<script>
+
+contenido=`{{ content }} `;
+
+
+$('#editor').toastuiEditor({
+  height: '500px',
+  initialEditType: 'wysiwyg',
+  previewStyle: 'vertical',
+  initialValue: contenido
+});
+
+
+function grabarNota() {
+  
+  const content = $('#editor').toastuiEditor('getMarkdown');
+  //alert ('hola');
+  alert ('hola: ' + content);
+
+  document.getElementById('edit_content').value= content;
+  document.getElementById('miForm').submit();
+
+  
+}
+
+
+</script>
+
+    <form id="miForm" name="miForm" action="{{ url_for('submit_edit', filename=filename) }}" method="POST">
+   
+        <br />
+        
+        <input id="edit_content" name="edit_content" type="hidden" value="">
+    </form>
+
+
+<button type="button" onclick="grabarNota()">Save</button>
+
+
+{% endblock %}

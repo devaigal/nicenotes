@@ -1,7 +1,37 @@
-pages:
+copyright: Copyright &copy; 2014 <a href="https://twitter.com/_tomchristie">Tom Christie</a>,
+  Maintained by the <a href="/about/release-notes/#maintenance-team">MkDocs Team</a>.
+edit_uri: ''
+extra_css:
+- css/extra.css
+google_analytics:
+- UA-27795084-5
+- mkdocs.org
+markdown_extensions:
+- toc:
+    permalink: "\uF0C1"
+- admonition
+- def_list
+nav:
 - Home: index.md
-- Otra: about.md
-- About: about.md
-- nuevoArchivo: nuevoArchivo.md
-site_name: MkLorum
+- User Guide:
+  - Writing Your Docs: user-guide/writing-your-docs.md
+  - Styling Your Docs: user-guide/styling-your-docs.md
+  - Configuration: user-guide/configuration.md
+  - Deploying Your Docs: user-guide/deploying-your-docs.md
+  - Custom Themes: user-guide/custom-themes.md
+  - Plugins: user-guide/plugins.md
+- About:
+  - Release Notes: about/release-notes.md
+  - Contributing: about/contributing.md
+  - License: about/license.md
+pages:
+- home: index.md
+- Nota_creada_con_scripts_python: Nota_creada_con_scripts_python.md
+plugins:
+- search
+repo_url: https://github.com/mkdocs/mkdocs/
+site_author: MkDocs Team
+site_description: Project documentation with Markdown.
+site_name: MkDocs
+site_url: https://www.mkdocs.org
 theme: readthedocs
