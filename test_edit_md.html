@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Editor's Dependecy Style -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
+  />
+  <!-- Editor's Style -->
+  <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+
+
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://uicdn.toast.com/editor/latest/toastui-jquery-editor.min.js"></script>
+
+
+
+
+<h1>My First Heading</h1>
+
+<p>My first paragraph.</p>
+
+<p id="demo">A Paragraph.</p>
+
+
+
+<button type="button" onclick="grabarNota()">Save</button>
+
+
+
+  <div id="editor"></div>
+
+
+
+<script>
+
+$('#editor').toastuiEditor({
+  height: '500px',
+  initialEditType: 'wysiwyg',
+  previewStyle: 'vertical',
+  initialValue: '# hello'
+});
+
+
+function grabarNota() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+  const content = $('#editor').toastuiEditor('getMarkdown');
+  alert ('hola: ' + content);
+  
+}
+
+
+</script>
+
+
+</body>
+</html>
+
+

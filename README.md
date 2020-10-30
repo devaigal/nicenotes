@@ -1,9 +1,11 @@
 # NiceNotes #
-Take the control of your data. Prototipo conceptual para diseño de persistencia para apps de notas, wiki, tareas, etc. basado en ficheros del sistema local. Para que pueda ser utilizado por diferentes aplicaciones cada una con un propósito concreto y muy acotado.
+> Take the control of your data.
+
+Prototipo conceptual para diseño de persistencia para apps de notas, wiki, tareas, etc. basado en ficheros del sistema local. El objetivo es poder crear varias aplicaciones cada una con un propósito concreto y muy acotado y que utilicen los datos basados en ficheros que estén bajo tu control.
 
 Se diseña un estándar para guardar notas, sus metadatos, ficheros adjuntos, etc. y por otra parte un prototipo conceptual de aplicación para utilizar esos datos guardados. 
 
-El objetivo es validar si esta aplicación y otras futuras con distintas funcionalidades pueden hacer uso de la persistencia solo en base a lo guardado en el sistema de ficheros. 
+El objetivo es validar si esta aplicación de notas y otras futuras con distintas funcionalidades pueden hacer uso de la persistencia solo en base a lo guardado en el sistema de ficheros.
 
 ---
 
@@ -21,7 +23,7 @@ Los scripts están basados en la utilidad [MkAdmin](https://github.com/janusnic/
 
   Generar automáticamente el ejemplo de readTheDocs al editar notas
 
-- [ ] 
+- [ ] Crear docker y desplegar en AWS Fargate
 
 ## Mkadmin
 
@@ -72,10 +74,6 @@ Subpages are not supported. Nesting pages is not yet implemented. For best resul
 ### Ejecución en local con imagen docker
 
 `docker run -v "$PWD:$PWD" -w "$PWD" -p5000:5000 --rm -it python-docker python3 mkdocsadmin.py`
-
-
-
-[1]: http://www.mkdocs.org/ "mkdocs.org"
 
 
 

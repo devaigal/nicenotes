@@ -25,6 +25,7 @@ contenido=`{{ content }} `;
 $('#editor').toastuiEditor({
   height: '500px',
   initialEditType: 'wysiwyg',
+  //initialEditType: 'markdown',
   previewStyle: 'vertical',
   initialValue: contenido
 });
@@ -34,7 +35,7 @@ function grabarNota() {
   
   const content = $('#editor').toastuiEditor('getMarkdown');
   //alert ('hola');
-  alert ('hola: ' + content);
+  //alert ('contenido: ' + content);
 
   document.getElementById('edit_content').value= content;
   document.getElementById('miForm').submit();

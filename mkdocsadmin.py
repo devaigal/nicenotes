@@ -77,7 +77,7 @@ def get_doclist():
             docs.append(doc)
     return docs
 
-
+@app.route(ADMINHOME+'/')
 @app.route(ADMINHOME)
 def display_index():
     return render_template('layout.html', doclist=get_doclist())
@@ -123,6 +123,10 @@ def display_edit_md(filename):
     try:
         with open(safe_filename, 'r') as editfile:
             content = editfile.read()
+            content=content.replace("`","\`")
+            content=content.replace("<br>","")
+            content=content.replace(">","\>")
+            print(content)
         return render_template('edit_md.html', doclist=get_doclist(),
                                filename=filename, content=content)
     except FileExistsError:

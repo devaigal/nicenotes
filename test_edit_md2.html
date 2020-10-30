@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+  <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.js"></script>
+
+
+
+
+  <!-- Editor's Dependecy Style -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
+  />
+  <!-- Editor's Style -->
+  <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.css" />
+
+</head>
+
+<body>
+
+
+
+<h1>My First Heading</h1>
+
+<p>My first paragraph.</p>
+
+<p id="demo">A Paragraph.</p>
+
+
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+
+
+  <div id="editor"></div>
+
+
+
+<script>
+
+
+const editor = new Editor({
+  el: document.querySelector('#editor'),
+  height: '500px',
+  initialEditType: 'markdown',
+  previewStyle: 'vertical'
+});
+
+editor.getHtml();
+
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+  alert ('hola');
+  alert ('hola: ' + editor.getHtml());
+  
+}
+
+
+</script>
+
+
+</body>
+</html>
+
+
