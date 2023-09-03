@@ -19,6 +19,6 @@ class Config(object):
     # MKDOCS_DIR    : directory of the mkdocs project written with trailing /
     # MKDOCS_CLEAN  : will not retain html files that do not have a matching
     #                 markdown file in the docs directory if set to True
-    MKDOCS_BIN = ''
-    MKDOCS_DIR = ''
+    MKDOCS_BIN = '/usr/local/bin/mkdocs'
+    MKDOCS_DIR = '/Users/carlos/desarrollo/works-niceNotes/nicenotes'
     MKDOCS_CLEAN = True

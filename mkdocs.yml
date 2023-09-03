@@ -27,6 +27,10 @@ nav:
 pages:
 - home: index.md
 - Nota_creada_con_scripts_python: Nota_creada_con_scripts_python.md
+- Plugins: user-guide/plugins.md
+- Nota_1: Nota_1.md
+- nota_2: nota_2.md
+- hola_mundo: hola_mundo.md
 plugins:
 - search
 repo_url: https://github.com/mkdocs/mkdocs/

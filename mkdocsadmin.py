@@ -4,8 +4,9 @@
 #               application. This enables it to be used in a basic wiki-like
 #               manner without needing to edit the files on the server itself.
 
-from flask import flash, Flask, redirect, render_template, request, \
-                  url_for
+from flask import flash, Flask, redirect, render_template, request
+#from flask import url_for
+
 from werkzeug.utils import secure_filename
 from subprocess import CalledProcessError, check_call
 from time import localtime, strftime
@@ -13,6 +14,7 @@ from sys import path as syspath
 from yaml import dump, safe_load
 import logging
 import os
+from os.path import join, getsize
 
 # user configurable value for modifying the admin URI
 # this value should always start with a /
@@ -36,6 +38,10 @@ else:
 fh.setFormatter(logformatter)
 logger.addHandler(fh)
 
+def url_for(funcion,filename):
+    url='/mkdadmin/' + funcion + '/'+filename
+    print (url)
+    return url
 
 def build_docs():
     try:
@@ -72,15 +78,32 @@ def get_doclist():
     mkddir = norm_docdir()
 
     docs = []
+    '''
     for doc in os.listdir(os.path.join(mkddir, 'docs')):
         if '.md' in doc:
             docs.append(doc)
     return docs
+    '''
+
+    for root, dirs, files in os.walk(os.path.join(mkddir, 'docs')):
+        for file in files:
+            if ".md" in file:
+                #print(root, "\n", "-"*(len(root)))
+                pass
+                break
+        for file in files:
+            if ".md" in file:
+                #print(file)
+                docs.append(file)
+    return docs
+
 
 @app.route(ADMINHOME+'/')
 @app.route(ADMINHOME)
 def display_index():
     return render_template('layout.html', doclist=get_doclist())
+
+
 
 
 @app.route(ADMINHOME + '/log')
@@ -112,13 +135,23 @@ def display_log():
                                log_content=logdata)
 
 
+@app.route(ADMINHOME + '/edit2/<path:path>')
+def edit2(path):
+    print("parth",path)
+    return path
+   
 
-@app.route(ADMINHOME + '/editmd/<filename>')
-def display_edit_md(filename):
+
+
+@app.route(ADMINHOME + '/editmd/<path:path>')
+def display_edit_md(path):
+    filename=path
 
     mkddir = norm_docdir()
 
     safe_filename = os.path.join(mkddir, 'docs', filename)
+    print('filename: ',safe_filename)
+
     content = ''
     try:
         with open(safe_filename, 'r') as editfile:

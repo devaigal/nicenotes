@@ -1,0 +1,42 @@
+niceNotes TODO
+
+
+- ejecutar nicenotes dentro del docker si no se especifica comando
+
+- cambiar mkadmin por niceNotes
+- arreglar error redirección en /
+- listar todos las notas del directorio y subdirectorios (usar find, comando del sistema)
+
+
+- probar editor wisiwig
+	Abro una libreta, selecciono nota, edito en wisiwig
+	probar otro editor wysiwyg: HyperMD	
+		https://laobubu.net/HyperMD/docs/examples/ai1.html
+		Ver fork de gitbook
+
+
+
+- acabar crud app 5000
+
+- buscar contenido de notas con comando grep -R (llamada a sistema o grep para python)
+
+
+
+
+- escapar caracteres para visualizar y grabar nota
+
+- espeficicar qué es una libreta niceNotes. 
+	tiene que ser autocontenida
+	escribir un ejemplo
+
+
+- busqueda en app 5000
+	a partir de un termino me dices en qué nota está y me resaltas en qué parte de la nota está
+	ver codigo buscador de mkdocs (en python) e incorporar en app5000
+		clave: 	from mkdocs.contrib import search
+				from mkdocs.contrib.search import search_index
+		el problema es que el buscador esta pensado para html y app5000 procesa solo md, no le hace falta pasar a html
+		No se puede usar porque carga todo el texto de las notas en javascript. El buscador es para javascript y es estático. 
+	opciones:
+		clase que guarde todo el texto en memoria de todas las notas y permita buscar en lo indexado
+		wrapper de llamada al sistema con grep -R

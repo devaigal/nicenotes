@@ -1,0 +1,7 @@
+lxml
+bs4
+requests
+flask
+pyyaml
+mkdocs
+

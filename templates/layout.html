@@ -38,7 +38,7 @@
 
             {% for doc in doclist %}
             <tr class="border" class="centercol">
-                <td class="border"><a href="{{ url_for('display_edit_md', filename=doc) }}">{{ doc }}</a></td>
+                <td class="border"><a href="/editmd/{{ doc }}">{{ doc }}</a></td>
             </tr>
             {% endfor %}
 

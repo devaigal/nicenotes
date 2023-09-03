@@ -4,6 +4,11 @@ How to style and theme your documentation.
 
 ---
 
+<!--
+esto es un comentario
+-->
+
+
 MkDocs includes a couple [built-in themes] as well as various [third party
 themes], all of which can easily be customized with [extra CSS or
 JavaScript][docs_dir] or overridden from the theme's [custom_dir]. You can also
@@ -165,7 +170,7 @@ h1 {
     If you are deploying your documentation with [ReadTheDocs]. You will need
     to explicitly list the CSS and JavaScript files you want to include in
     your config. To do this, add the following to your mkdocs.yml.
-
+    
         extra_css: [extra.css]
 
 After making these changes, they should be visible when you run
